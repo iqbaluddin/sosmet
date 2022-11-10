@@ -14,7 +14,6 @@ body{
 	background: #222;
 }
 .judul{
-	padding-bottom: 30px;
 	text-align: center;
 	color: #fff;
 	font-weight: 800;
@@ -27,7 +26,7 @@ body{
 	align-items: center;
 	flex-direction: column;
 	padding: 60px 0;
-	gap: 20px;
+	gap: 40px;
 }
 .container .box{
 	position: relative;
@@ -36,8 +35,20 @@ body{
 	background: #2e2e2e;
 	border-radius: 10px;
 	display: flex;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
+}
+.container .box::before {
+	content: '';
+	position: absolute;
+	inset: -15px 50px;
+	border-top: 4px solid var(--clr);
+	border-bottom: 4px solid var(--clr);
+	z-index: -1;
+	transition: 0.5s ease-in-out;
+}
+.container .box:hover::before {
+	inset: -10px 10px;
 }
 .container .box .content{
 	position: relative;
@@ -65,7 +76,7 @@ body{
 	background: #2e2e2e;
 	transition: 0.3s ease-in-out;
 }
-.container .box:hover .content .icon {
+.container .box:hover .content .icon{
 	background: var(--clr);
 	color: #2e2e2e;
 	box-shadow: 0 0 0 3px #2e2e2e, 0 0 0 300px var(--clr);
@@ -80,11 +91,14 @@ ul li{
 }
 ul li a{
 	display: flex;
-	padding: 15px 57px 15px 57px;
+	width: 195px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 60px;
+	box-sizing: border-box;
 	text-decoration: none;
 	color: #fff;
 	font-weight: 500;
-	box-sizing: border-box;
 }
 .container .box:hover .content a{
 	font-weight: 600;
